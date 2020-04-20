@@ -23,7 +23,10 @@ public class Gun : MonoBehaviour
         if (Physics.Raycast(PlayerCam.transform.position,PlayerCam.transform.forward,out hit,range))
         {
             Debug.Log(hit.transform.name);
-            if(hit.GetType().)
+            if(hit.transform.tag == "zombie")
+            {
+                
+            }
         }
     }
 }
