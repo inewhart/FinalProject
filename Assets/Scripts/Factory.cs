@@ -12,11 +12,7 @@ public class Factory : MonoBehaviour
     {
         _instance = this; 
     }
-    public void Initialize(GameObject player)
-    {
-        PlayerGameObject = player;
-        PlayerObject = PlayerGameObject.GetComponent<Player>();
-    }
+    
     void Start()
     {
         
@@ -25,17 +21,17 @@ public class Factory : MonoBehaviour
     {
     var random = new System.Random();
     var startPositionY = 2; 
-    var startPositionX = (float) (random.NextDouble() - 0.5f) * ; 
-    var startPositionZ = (float) (random.NextDouble() - 0.5f) * ; 
+    var startPositionX = (float) (random.NextDouble() - 38f) * 90; 
+    var startPositionZ = (float) (random.NextDouble() - 38f) * 90; 
     var startPosition = new Vector3(startPositionX, startPositionY, startPositionZ); 
     return Create(startPosition); 
 }
 private Dummy Create(Vector3 startPosition) 
 { 
-    var zombieGameObject = Object.Instantiate(_instance.Dummy, startPosition, Quaternion.identity);
-    var zombieObject = zombieGameObject.GetComponent<Dummy>(); 
-    zombieObject.Initialize(Player); 
-    return zombieObject; 
+    var DummyGameObject = Object.Instantiate(_instance.Dummy, startPosition, Quaternion.identity);
+    var DummyObject = DummyGameObject.GetComponent<Dummy>(); 
+    DummyObject.Initialize(Player); 
+    return DummyObject; 
 }
     // Update is called once per frame
     void Update()

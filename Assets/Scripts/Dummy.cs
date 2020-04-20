@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Dummy : MonoBehaviour
 {
+    public Player PlayerObject;
+    private GameObject PlayerGameObject;
+    private GameObject Player;
     private float Health;
-    public GameObject Player;
     private float speed = 2f;
     public float Damage;
     public ParticleSystem Death;
@@ -15,6 +17,11 @@ public class Dummy : MonoBehaviour
         animator = this.GetComponent<Animator>();
         Health = 100;
         Damage = 20;
+    }
+    public void Initialize(GameObject player)
+    {
+        Player = player;
+        PlayerObject = PlayerGameObject.GetComponent<Player>();
     }
     void Start()
     {
