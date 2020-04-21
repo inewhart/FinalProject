@@ -6,7 +6,10 @@ using UnityEngine;
 public class Factory : MonoBehaviour
 {
     public GameObject Player;
+    public Player player;
     public GameObject Dummy;
+    private static float SpawnTime = 10.0f;
+    public float Timer;
     
     
     private static Factory _instance; 
@@ -17,7 +20,15 @@ public class Factory : MonoBehaviour
     
     void Start()
     {
-        
+        Timer = player.timeLeft;
+        while(player.timeLeft != 0)
+        {
+            if(Time.deltaTime % 15 == 0)
+            {
+                Debug.Log("hi");
+                Dummyspawn();
+            }
+        }
     }
     public Dummy Dummyspawn() 
     {

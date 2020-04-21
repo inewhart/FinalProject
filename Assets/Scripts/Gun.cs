@@ -6,7 +6,7 @@ public class Gun : MonoBehaviour
 {
     public float damage = 10f;
     public float range = 100f;
-    public int total ammo = 36;
+    public int totalAmmo = 36;
     public int maxAmmo = 6;
     private int currAmmo;
     public float reloadTime = 1f;
@@ -15,15 +15,15 @@ public class Gun : MonoBehaviour
     {
         currAmmo = maxAmmo;
     }
-    IEnumerator reload()
-    {
-        
-    } 
+    // IEnumerator reload()
+    // {
+    //     return;
+    // } d
     void Update()
     {
         if(currAmmo <= 0)
         {
-            reload();
+            // reload();
         }
         if (Input.GetButtonDown("Fire1"))
         {

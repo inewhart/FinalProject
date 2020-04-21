@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Timer.text = "Time Remaining Til Evac:" + timeLeft;
+        Timer.text = "Time Remaining Til Evac: " + timeLeft;
         timeLeft -= Time.deltaTime;
         if ( timeLeft < 0 )
         {
