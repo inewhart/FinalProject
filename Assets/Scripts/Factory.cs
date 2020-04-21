@@ -20,24 +20,18 @@ public class Factory : MonoBehaviour
     
     void Start()
     {
-        Timer = player.timeLeft;
-        while(player.timeLeft != 0)
-        {
-            if(Time.deltaTime % 15 == 0)
-            {
-                Debug.Log("hi");
-                Dummyspawn();
-            }
-        }
+        InvokeRepeating("Dummyspawn",0f,10.0f);
     }
     public Dummy Dummyspawn() 
     {
     var random = new System.Random();
     var startPositionY = 2; 
-    var startPositionX = (float) (random.NextDouble() - 38f) * 90; 
-    var startPositionZ = (float) (random.NextDouble() - 38f) * 90; 
+    var startPositionX = (float) (random.Next(40, 80)); 
+    var startPositionZ = (float) (random.Next(40, 80));
     var startPosition = new Vector3(startPositionX, startPositionY, startPositionZ); 
+    Debug.Log("x " + startPositionX +","+" z " +startPositionZ);
     return Create(startPosition); 
+    
 }
 private Dummy Create(Vector3 startPosition) 
 { 
@@ -46,9 +40,4 @@ private Dummy Create(Vector3 startPosition)
     DummyObject.Initialize(Player); 
     return DummyObject; 
 }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
