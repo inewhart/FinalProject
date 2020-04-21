@@ -8,7 +8,7 @@ public class Dummy : MonoBehaviour
     private GameObject PlayerGameObject;
     private GameObject Player;
     private float Health;
-    private float speed = 2f;
+    private float speed = 100f;
     public float Damage;
     public ParticleSystem Death;
     private Animator animator;
@@ -27,7 +27,7 @@ public class Dummy : MonoBehaviour
     {
         
     }
-    void DummytHit()
+    public void DummyHit()
     {
         Health -= Damage;
         if (Health <= 0.0f) 
@@ -45,7 +45,7 @@ public class Dummy : MonoBehaviour
     
         var distance = Vector3.Distance( Player.transform.position, transform.position);
     
-        if ( distance < 100  ) 
+        if ( distance < 200  ) 
         { 
         
             Vector3 PlayerDir = new Vector3(Player.transform.position.x,transform.position.y,Player.transform.position.z);

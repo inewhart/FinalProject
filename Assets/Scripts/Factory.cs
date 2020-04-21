@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Factory : MonoBehaviour
 {
     public GameObject Player;
     public GameObject Dummy;
-    float  timeLeft;
+    
+    
     private static Factory _instance; 
     void Awake()
     {
@@ -36,10 +38,6 @@ private Dummy Create(Vector3 startPosition)
     // Update is called once per frame
     void Update()
     {
-        timeLeft -= Time.deltaTime;
-        if ( timeLeft < 0 )
-        {
-            Application.Quit();
-        }
+        
     }
 }
