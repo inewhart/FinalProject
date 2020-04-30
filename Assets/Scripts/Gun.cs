@@ -27,7 +27,7 @@ public class Gun : MonoBehaviour
             Reload();
             reloadAnnouncement.gameObject.SetActive(false);
         }
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && reloading == false)
         {
             Shoot();
         }
@@ -35,7 +35,6 @@ public class Gun : MonoBehaviour
     IEnumerator Reload()
     {
         reloading = true;
-
         yield return new WaitForSeconds(reloadTime);
         currAmmo = maxAmmo;
     }
@@ -54,3 +53,4 @@ public class Gun : MonoBehaviour
         }
     }
 }
+

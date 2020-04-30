@@ -8,7 +8,6 @@ public class Factory : MonoBehaviour
     public GameObject Player;
     public Player player;
     public GameObject Dummy;
-    private static float SpawnTime = 10.0f;
     public float Timer;
     
     

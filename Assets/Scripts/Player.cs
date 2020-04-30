@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -20,6 +21,10 @@ public class Player : MonoBehaviour
     void Update()
     {
         HealthText.text = "Health Remaining: " + Health;
+        if(Health <= 0)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
         Timer.text = "Time Remaining Til Evac: " + timeLeft;
         timeLeft -= Time.deltaTime;
         if ( timeLeft < 0 )

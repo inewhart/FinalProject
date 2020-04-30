@@ -1,8 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class Dummy : MonoBehaviour
 {
@@ -10,22 +8,24 @@ public class Dummy : MonoBehaviour
     private GameObject PlayerGameObject;
     private GameObject Player;
     private float Health;
-    private float speed = 10f;
+    private float speed = 2f;
     public float Damage;
     public ParticleSystem Death;
     private Animator animator;
-    
     void Awake()
     {
         animator = this.GetComponent<Animator>();
         Health = 100;
         Damage = 20;
-        
     }
     public void Initialize(GameObject player)
     {
         Player = player;
-        //PlayerObject = PlayerGameObject.GetComponent<Player>();
+        PlayerObject = Player.GetComponent<Player>();
+    }
+    void Start()
+    {
+        
     }
     public void DummyHit()
     {
@@ -42,16 +42,13 @@ public class Dummy : MonoBehaviour
         {
             Death.Play();
             Destroy(gameObject);
-            PlayerObject.Health -= Damage;
+            PlayerObject.Health -= 20; 
         }
     }
     // Update is called once per frame
     void Update()
     {
-        if(PlayerObject.Health <= 0)
-        {
-            SceneManager.LoadScene("GameOver");
-        }
+        
         if (!Player) 
             return; 
     
