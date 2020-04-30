@@ -1,45 +1,57 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Dummy : MonoBehaviour
 {
-    public Player PlayerObject;
+    private Player PlayerObject;
     private GameObject PlayerGameObject;
     private GameObject Player;
     private float Health;
-    private float speed = 2f;
+    private float speed = 10f;
     public float Damage;
     public ParticleSystem Death;
     private Animator animator;
+    
     void Awake()
     {
         animator = this.GetComponent<Animator>();
         Health = 100;
         Damage = 20;
+        
     }
     public void Initialize(GameObject player)
     {
         Player = player;
-        PlayerObject = PlayerGameObject.GetComponent<Player>();
-    }
-    void Start()
-    {
-        
+        //PlayerObject = PlayerGameObject.GetComponent<Player>();
     }
     public void DummyHit()
     {
         Health -= Damage;
         if (Health <= 0.0f) 
         { 
-            Destroy(this);
             Death.Play();
+            Destroy(gameObject);
         }
     }
-
+    void OnCollisionEnter(Collision hit)
+    {
+        if(hit.gameObject.tag == "player")
+        {
+            Death.Play();
+            Destroy(gameObject);
+            PlayerObject.Health -= Damage;
+        }
+    }
     // Update is called once per frame
     void Update()
     {
+        if(PlayerObject.Health <= 0)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
         if (!Player) 
             return; 
     

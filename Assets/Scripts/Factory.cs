@@ -20,7 +20,7 @@ public class Factory : MonoBehaviour
     
     void Start()
     {
-        InvokeRepeating("Dummyspawn",0f,10.0f);
+        InvokeRepeating("Dummyspawn",0f,2.0f);
     }
     public Dummy Dummyspawn() 
     {
