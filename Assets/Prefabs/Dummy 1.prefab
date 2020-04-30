@@ -6090,9 +6090,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbe008129e0b4bf47be22a3f8f7dca16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Head: {fileID: 4493914613880827488, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
   Damage: 20
   Death: {fileID: 1697004568589847208}
-  PlayerHealth: 100
 --- !u!54 &3013311817477218747
 Rigidbody:
   m_ObjectHideFlags: 0

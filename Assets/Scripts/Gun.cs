@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class Gun : MonoBehaviour
 {
-    public float damage = 10f;
+    public float damage = 20f;
     public float range = 100f;
-    public int maxAmmo = 6;
+    private int maxAmmo = 6;
     private int currAmmo;
     public float reloadTime = 1f;
     public Text ammoCount;
@@ -20,12 +20,11 @@ public class Gun : MonoBehaviour
     }
     void Update()
     {
+        // Debug.Log(reloading);
         ammoCount.text = "Current Ammo: " + currAmmo;
-        if(currAmmo <= 0)
+        if(currAmmo <= 0 && reloading == false)
         {
-            reloadAnnouncement.gameObject.SetActive(true);
-            Reload();
-            reloadAnnouncement.gameObject.SetActive(false);
+            StartCoroutine("Reload");
         }
         if (Input.GetButtonDown("Fire1") && reloading == false)
         {
@@ -35,12 +34,15 @@ public class Gun : MonoBehaviour
     IEnumerator Reload()
     {
         reloading = true;
+        reloadAnnouncement.gameObject.SetActive(true);
         yield return new WaitForSeconds(reloadTime);
+        reloading = false;
         currAmmo = maxAmmo;
+        reloadAnnouncement.gameObject.SetActive(false);
     }
     private void Shoot()
     {
-        Debug.Log("Help");
+        Debug.Log("Help" + gameObject.name);
         currAmmo--;
         RaycastHit hit;
         if (Physics.Raycast(PlayerCam.transform.position,PlayerCam.transform.forward,out hit,range))

@@ -592,10 +592,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   range: 100
-  maxAmmo: 36
   reloadTime: 1
   ammoCount: {fileID: 330497068}
-  reloadAnnouncement: {fileID: 0}
+  reloadAnnouncement: {fileID: 782994272}
   PlayerCam: {fileID: 1534973050}
   reloading: 0
 --- !u!1 &705507993
@@ -913,7 +912,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press [R] to Reload
+  m_Text: Reloading!
 --- !u!222 &782994273
 CanvasRenderer:
   m_ObjectHideFlags: 0

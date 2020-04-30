@@ -8,7 +8,7 @@ public class Dummy : MonoBehaviour
     private GameObject PlayerGameObject;
     private GameObject Player;
     private float Health;
-    private float speed = 2f;
+    private float speed = 4f;
     public float Damage;
     public ParticleSystem Death;
     private Animator animator;

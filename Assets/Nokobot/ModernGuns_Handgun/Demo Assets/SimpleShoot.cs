@@ -26,19 +26,19 @@ public class SimpleShoot : MonoBehaviour
         }
     }
 
-    void Shoot()
-    {
-        //  GameObject bullet;
-        //  bullet = Instantiate(bulletPrefab, barrelLocation.position, barrelLocation.rotation);
-        // bullet.GetComponent<Rigidbody>().AddForce(barrelLocation.forward * shotPower);
+    // void Shoot()
+    // {
+    //     //  GameObject bullet;
+    //     //  bullet = Instantiate(bulletPrefab, barrelLocation.position, barrelLocation.rotation);
+    //     // bullet.GetComponent<Rigidbody>().AddForce(barrelLocation.forward * shotPower);
 
-        GameObject tempFlash;
-       tempFlash = Instantiate(muzzleFlashPrefab, barrelLocation.position, barrelLocation.rotation);
+    //     GameObject tempFlash;
+    //    tempFlash = Instantiate(muzzleFlashPrefab, barrelLocation.position, barrelLocation.rotation);
 
-       // Destroy(tempFlash, 0.5f);
-        //  Instantiate(casingPrefab, casingExitLocation.position, casingExitLocation.rotation).GetComponent<Rigidbody>().AddForce(casingExitLocation.right * 100f);
+    //    // Destroy(tempFlash, 0.5f);
+    //     //  Instantiate(casingPrefab, casingExitLocation.position, casingExitLocation.rotation).GetComponent<Rigidbody>().AddForce(casingExitLocation.right * 100f);
        
-    }
+    // }
 
     void CasingRelease()
     {
