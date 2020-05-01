@@ -27,9 +27,9 @@ public class Player : MonoBehaviour
         }
         Timer.text = "Time Remaining Til Evac: " + timeLeft;
         timeLeft -= Time.deltaTime;
-        if ( timeLeft < 0 )
+        if ( timeLeft <= 0 )
         {
-            Application.Quit();
+            SceneManager.LoadScene("WinScreen");
         }
     }
 }
